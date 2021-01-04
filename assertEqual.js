@@ -1,9 +1,9 @@
 const pass = function(actual, expected) {
-  return "🤩🥳🤩 Assertion Passed: " + actual + " === " + expected;
+  return `🤩🥳🤩 Assertion Passed: ${actual} === ${expected}`;
 };
 
 const fail = function(actual, expected) {
-  return "❌ Assertion Failed: " + actual + " !== " + expected;
+  return `❌ Assertion Failed: ${actual} !== ${expected}`;
 };
 
 const assertEqual = function(actual, expected) {

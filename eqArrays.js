@@ -1,27 +1,19 @@
-const assertEqual = (actual, expected) => {
-  if (actual === expected){
-    return true;
-  } else {
-    return false;
-  }
-};
+const assertEqual = require('./assertEqual.js');
 
+const trueOrFalseArray = (actual, expected) => actual === expected ? true : false;
+  
 const eqArrays = (actualArray, expectedArray) => {
   let boolean = [];
-  for (let i = actualArray.length - 1; i >= 0; i--){
-    boolean.push(assertEqual(actualArray[i], expectedArray[i]));
+  for (let i = actualArray.length - 1; i >= 0; i--) {
+    boolean.push(trueOrFalseArray(actualArray[i], expectedArray[i]));
   }
-  for (bool of boolean){
-    if (bool === false){
-      return false
-    } else {
-      return true;
-    }
+  for (let bool of boolean) {
+    if (bool === false) return false;
   }
+  return true;
 };
 
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
-console.log(eqArrays([1, 2, 3], [1, 2, 3])) // => true
-console.log(eqArrays([1, 2, 3], [3, 2, 1])) // => false
-console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])) // => true
-console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])) // => false
+module.exports = {
+  assertEqual,
+  eqArrays
+};

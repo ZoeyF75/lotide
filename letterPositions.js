@@ -17,6 +17,4 @@ const letterPositions = function(string) {
   return results;
 };
 
-//Test Code: eqArrays((letterPositions("hello").l) , [2,3]);
-
 module.exports = letterPositions;

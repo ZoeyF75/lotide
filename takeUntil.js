@@ -10,8 +10,3 @@ module.exports = {
   implement,
   takeUntil
 };
-
-/*Test Code
-const exampleArray = ['If', 'you', 'like', 'pina', 'coladas', ',', 'and', 'getting', 'caught', 'in', 'the', 'rain']
-const results = implement(takeUntil(exampleArray ,','),exampleArray);
-console.log(eqArrays(results, ['If', 'you', 'like', 'pina', 'coladas']));*/

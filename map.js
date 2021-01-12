@@ -12,9 +12,3 @@ const map = function(array, callback) {
 };
 
 module.exports = map;
-
-/* Test Code
-const words = ["senpai", "weeb", "animalcrossing", "frenchhorn"];
-const results1 = map(words, word => word[0]);
-const proof = words.map(letter => letter[0]);
-eqArrays(results1, proof);*/

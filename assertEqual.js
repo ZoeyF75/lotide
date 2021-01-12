@@ -1,8 +1,7 @@
+/*outer ternary operator checks if the two values are the same type and if they are
+it compares them with === else it compares them with == and attempts to coerce them for user friendliness*/
 const assertEqual = (actual, expected) => {
-  return actual === expected ? `🤩🥳🤩 Assertion Passed: ${actual} === ${expected}` : `❌ Assertion Failed: ${actual} !== ${expected}`;
+  return typeof actual === typeof expected ? (actual === expected ? `🤩🥳🤩 Assertion Passed: ${actual} === ${expected}` : `❌ Assertion Failed: ${actual} !== ${expected}`) : (actual == expected ? `🤩🥳🤩 Assertion Passed: ${actual} === ${expected}` : `❌ Assertion Failed: ${actual} !== ${expected}`);
 };
 
-console.log(assertEqual("Lighthouse Labs ", "Lighthouse Labs "));
-console.log(assertEqual("hello", "bye"));
-console.log(assertEqual(2,2));
-console.log(assertEqual(2, 1));
+module.exports = assertEqual;

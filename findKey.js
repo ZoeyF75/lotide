@@ -1,7 +1,8 @@
-const assertEqual = (actual, expected) => actual === expected ? `🤩🥳🤩 Assertion Passed: ${actual} === ${expected}` : `❌ Assertion Failed: ${actual} !== ${expected}` ;
+const assertEqual = require('./assertEqual');
 
 const findKey = (object, key) => {
-  for (o in object) {
+  let result;
+  for (let o in object) {
     result = key(object[o]) ? o : undefined;
     if (result !== undefined) {
       return o;
@@ -9,6 +10,9 @@ const findKey = (object, key) => {
   }
 };
 
+module.exports = findKey;
+
+/* Test Code
 console.log(assertEqual(findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
@@ -16,6 +20,4 @@ console.log(assertEqual(findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2),'noma')); 
-
-
+}, x => x.stars === 2),'noma'));*/

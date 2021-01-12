@@ -1,17 +1,16 @@
-const assertEqual = (actual, expected) => {
-  return actual === expected ? `🤩🥳🤩 Assertion Passed: ${actual} === ${expected}` : `❌ Assertion Failed: ${actual} !== ${expected}`;
-};
+const assertEqual = require('./assertEqual');
 
 const countLetters = (string) => {
   let letters = {};
-  for(let letter of string){
-    if (letters[letter]){
-      letters[letter] += 1;
-    } else {
-      letters[letter] = 1;
-    }
-  }
+  for (let letter of string) letters[letter] ? letters[letter] += 1 : letters[letter] = 1;
   return letters;
 };
 
-console.log(countLetters("pineapple"));
+module.exports = countLetters;
+
+/*Test Code
+const example = 'pineapple';
+const comparison = countLetters(example);
+console.log(countLetters("hello i am a string"));
+console.log(assertEqual(comparison['p'], 3));
+console.log(assertEqual(comparison['e'], 2));*/
